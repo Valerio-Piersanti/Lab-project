@@ -3,25 +3,20 @@ This repository presents the implementation of a computational workflow designed
 # Previous packages
 The pipeline depends on the following bioinformatics tools and libraries, which must be installed before running the workflow. Most of them are available through the conda package manager (via the Bioconda or Conda-Forge channels):
 1. CD-HIT
-Groups highly similar protein sequences into clusters to reduce redundancy in input datasets. This ensures that the training set for the HMM is non-redundant.
-Install via conda:
-conda install -c bioconda cd-hit
+  Groups highly similar protein sequences into clusters to reduce redundancy in input datasets. This ensures that the training set for the HMM is non-redundant.
+```bash conda install -c bioconda cd-hit```
 2. HMMER
-Use: Core tool for building Profile Hidden Markov Models and scanning sequence databases for domain detection. Essential for training and testing the structural HMM.
-Install via conda:
-###conda install -c bioconda hmmer###
+  Use: Core tool for building Profile Hidden Markov Models and scanning sequence databases for domain detection. Essential for training and testing the structural HMM.
+```bash conda install -c bioconda hmmer```
 
-3. BLAST+
-Use: Performs similarity searches (via blastp) to retrieve known homologous sequences or verify hits. Useful for validating HMM predictions.
-Install via conda:
-conda install -c bioconda blast
+5. BLAST+
+  Use: Performs similarity searches (via blastp) to retrieve known homologous sequences or verify hits. Useful for validating HMM predictions.
+  ```conda install -c bioconda blast```
 
-4. MUSCLE (Optional — only needed for sequence-based HMM comparison)
-Use: Generates multiple sequence alignments from sequence data, used to build the baseline sequence-based HMM for comparison against the structure-based model.
-Install via conda:
-conda install -c bioconda muscle
+6. MUSCLE (Optional — only needed for sequence-based HMM comparison)
+  Use: Generates multiple sequence alignments from sequence data, used to build the baseline sequence-based HMM for comparison against the structure-based model.
+  ```conda install -c bioconda muscle```
 
-5. Biopython
-Use: Required to run get_seq.py, a script that extracts specific sequences from FASTA files based on identifiers. Enables automation and parsing of biological data formats.
-Install via conda:
-conda install -c conda-forge biopython
+7. Biopython
+  Use: Required to run get_seq.py, a script that extracts specific sequences from FASTA files based on identifiers. Enables automation and parsing of biological data formats.
+  ```conda install -c conda-forge biopython```
