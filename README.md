@@ -9,7 +9,7 @@ conda install -c bioconda cd-hit
 2. HMMER
 Use: Core tool for building Profile Hidden Markov Models and scanning sequence databases for domain detection. Essential for training and testing the structural HMM.
 Install via conda:
-conda install -c bioconda hmmer
+###conda install -c bioconda hmmer###
 
 3. BLAST+
 Use: Performs similarity searches (via blastp) to retrieve known homologous sequences or verify hits. Useful for validating HMM predictions.
