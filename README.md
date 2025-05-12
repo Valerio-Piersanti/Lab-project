@@ -55,7 +55,7 @@ The pipeline depends on the following bioinformatics tools and libraries, which 
 Execute the following script:
 
 ```bash script_recover_representative_kunitz.sh```
-This will generate the file tmp_pdb_efold_ids.txt.
+This will generate the file `tmp_pdb_efold_ids.txt`.
 
 Note: Before submitting to PDBeFold, manually review the sequences to ensure they are of appropriate length and free of unstructured regions. This ensures alignment and HMM quality.
 
