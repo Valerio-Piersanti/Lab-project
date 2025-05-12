@@ -68,9 +68,9 @@ Set the following options:
 
 - Source: List of PDB codes
 
-- Upload the tmp_pdb_efold_ids.txt file and download the FASTA alignment.
+- Upload the `tmp_pdb_efold_ids.txt file` and download the FASTA alignment.
 
-Paste the downloaded content into the pdb_kunitz_rp.ali file.
+Paste the downloaded content into the `pdb_kunitz_rp.ali file`.
 
 ### Step 3: Build and Test the HMM Model
 
@@ -94,6 +94,6 @@ This pipeline will:
 
 - Report MCC, precision, recall, false positives, and false negatives.
 
-The results will be saved in the hmm_results_strali.txt file.
+The results will be saved in the `hmm_results_strali.txt file`.
 
 
