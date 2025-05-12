@@ -6,7 +6,6 @@
 - [Recommended Packages](#recommended-packages)
 - [Required Files](#required-files)
 - [Workflow](#workflow)
-- [File Description](#file-description)
 
 ---
 
