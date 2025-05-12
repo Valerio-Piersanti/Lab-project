@@ -53,11 +53,85 @@ The pipeline depends on the following bioinformatics tools and libraries, which 
 ## Workflow
 
 1. **Download Swiss-Prot FASTA**  
-2. **Install required packages**  
-3. **Run representative ID extraction script**  
-4. **Perform structure-based multiple alignment**  
-5. **Build and test HMM model for structural alignment**  
-6. **(Optional) Compare with sequence-based HMM**
+### Step 2: Extract Representative Kunitz Domain Structures
+Run the following script to collect a set of representative PDB entries annotated with the Kunitz domain:
+
+```bash
+bash script_recover_representative_kunitz.sh
+This generates a file named tmp_pdb_efold_ids.txt containing the PDB codes.
+
+Note: Before uploading the list to PDBeFold, manually check and filter out any sequences that are too long, too short, or contain disordered tails. This improves alignment consistency and HMM quality.
+
+Step 3: Perform Structure-Based Multiple Sequence Alignment
+Go to the PDBeFold Multi Alignment Tool
+
+Set the following parameters:
+
+Mode: Multiple
+
+Source: List of PDB codes
+
+Upload the file tmp_pdb_efold_ids.txt
+
+Download the FASTA alignment
+
+Paste the downloaded content into the file:
+
+Copia
+Modifica
+pdb_kunitz_rp.ali
+Step 4: Build and Evaluate the Structure-Based HMM
+Run the following scripts:
+
+bash
+Copia
+Modifica
+bash create_hmm_str.sh
+bash create_testing_sets.sh
+These scripts perform the following operations:
+
+Build a structural HMM from the PDBeFold alignment.
+
+Remove training sequences and create two random test sets with positive and negative examples.
+
+Use 2-fold cross-validation to identify optimal E-value thresholds via Matthews Correlation Coefficient (MCC).
+
+Evaluate the model using:
+
+Set 1 evaluated with Set 2’s threshold
+
+Set 2 evaluated with Set 1’s threshold
+
+Combined Set 1 + Set 2 with both thresholds
+
+Results are written to:
+
+Copia
+Modifica
+hmm_results_strali.txt
+Metrics reported include:
+
+Matthews Correlation Coefficient (MCC)
+
+Precision
+
+Recall (True Positive Rate)
+
+Lists of false positives and false negatives
+
+css
+Copia
+Modifica
+
+Fammi sapere se vuoi anche una sezione per la **versione opzionale basata su sequenze (MUSCLE)** o per aggiungere link cliccabili a file del repository.
+
+
+
+
+
+
+
+
 
 ---
 
