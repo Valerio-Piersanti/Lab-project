@@ -39,7 +39,12 @@ The pipeline depends on the following bioinformatics tools and libraries, which 
 
 ## Required Files
 
-[`script_recover_representative_kunitz.sh`](./script_recover_representative_kunitz.sh)
+- [`create_hmm_str.sh`](./create_hmm_str.sh) – Script to build the structural HMM model from the structural alignment.
+- [`create_testing_sets.sh`](./create_testing_sets.sh) – Script to generate the test sets and compute performance metrics.
+- [`script_recover_representative_kunitz.sh`](./script_recover_representative_kunitz.sh) – Script to extract representative PDB IDs of Kunitz domain structures.
+- [`performance.py`](./performance.py) – Python script to compute evaluation metrics (MCC, precision, TPR, etc.) for model predictions.
+- [`getseq.py`](./getseq.py) – Python script to extract specific sequences from a FASTA file based on a list of accession IDs.
+- [`rcsb_pdb_custom_report_20250407015737.csv`](./rcsb_pdb_custom_report_20250407015737.csv) – Custom report downloaded from RCSB PDB, filtered for Kunitz domain structures.
 
 ---
 
