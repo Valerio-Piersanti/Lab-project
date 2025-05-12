@@ -52,79 +52,53 @@ The pipeline depends on the following bioinformatics tools and libraries, which 
 
 ## Workflow
 
-1. **Download Swiss-Prot FASTA**  
-### Step 2: Extract Representative Kunitz Domain Structures
-Run the following script to collect a set of representative PDB entries annotated with the Kunitz domain:
+Step 2: Run Representative ID Extraction Script
+Execute the script:
 
+bash
+Copia
+Modifica
 bash script_recover_representative_kunitz.sh
-This generates a file named tmp_pdb_efold_ids.txt containing the PDB codes.
+This will generate tmp_pdb_efold_ids.txt.
 
-Note: Before uploading the list to PDBeFold, manually check and filter out any sequences that are too long, too short, or contain disordered tails. This improves alignment consistency and HMM quality.
+Note: Before submitting to PDBeFold, manually review the sequences to ensure they are of appropriate length and free of unstructured regions. This ensures alignment and HMM quality.
 
-Step 3: Perform Structure-Based Multiple Sequence Alignment
-Go to the PDBeFold Multi Alignment Tool
+Step 3: Perform Structure-Based Multiple Alignment
+Go to the PDBeFold Multi Alignment Tool.
 
-Set the following parameters:
+Set:
 
 Mode: Multiple
 
 Source: List of PDB codes
 
-Upload the file tmp_pdb_efold_ids.txt
+Upload tmp_pdb_efold_ids.txt and download the FASTA alignment.
 
-Download the FASTA alignment
+Paste the downloaded content into pdb_kunitz_rp.ali.
 
-Paste the downloaded content into the file:
+Step 4: Build and Test the HMM Model
+Execute the script:
 
+bash
 Copia
 Modifica
-pdb_kunitz_rp.ali
-### Step 4: Build and Evaluate the Structural HMM Model
-
-Run the following scripts to build the structural HMM and evaluate its performance:
-
-```bash
 bash create_hmm_str.sh
-bash create_testing_sets.sh
-This step will:
+Execute:
 
-Build a structural HMM using the multiple alignment from PDBeFold (pdb_kunitz_rp.ali)
-
-Filter out training sequences from the Swiss-Prot dataset (uniprot_sprot.fasta)
-
-Generate positive (pos_1.fasta, pos_2.fasta) and negative (neg_1.fasta, neg_2.fasta) test sets
-
-Automatically compute optimal E-value thresholds using 2-fold cross-validation (based on Matthews Correlation Coefficient, MCC)
-
-Evaluate model performance across:
-
-Set 1 using Set 2’s threshold
-
-Set 2 using Set 1’s threshold
-
-Combined set using both thresholds
-
-Output evaluation metrics (MCC, precision, recall, FPR, FNR) to:
-
+bash
 Copia
 Modifica
-hmm_results_strali.txt
-False positives and false negatives will also be listed in the output files.
+bash create_testing_sets.sh
+This pipeline will:
 
+Build the structural HMM from the PDBeFold alignment.
 
+Create training and test sets by separating positive (Kunitz) and negative (non-Kunitz) sequences.
 
+Perform 2-fold cross-validation to identify the optimal E-value thresholds using MCC.
 
+Evaluate the model on Set 1, Set 2, and a combined dataset.
 
+Report MCC, precision, recall, false positives, and false negatives.
 
-
----
-
-## File Description
-
-- `create_hmm_str.sh` – builds structure-based HMM  
-- `create_testing_sets.sh` – generates test sets & evaluates  
-- `create_hmm_seq.sh` – builds sequence-based HMM (MUSCLE)  
-- `get_seq.py` – extracts sequences from FASTA  
-- `performance.py` – calculates MCC, precision, etc.  
-- `*.class` – classification result files  
-- `*.hmm`, `*.fasta` – alignment and HMM data
+Results will be saved in hmm_results_strali.txt.
