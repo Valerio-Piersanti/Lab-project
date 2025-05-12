@@ -39,7 +39,7 @@ The pipeline depends on the following bioinformatics tools and libraries, which 
 
 ## Required Files
 
-(Descrizione dei file richiesti nel repository)
+[`script_recover_representative_kunitz.sh`](./script_recover_representative_kunitz.sh)
 
 ---
 
