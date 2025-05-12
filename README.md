@@ -56,7 +56,6 @@ The pipeline depends on the following bioinformatics tools and libraries, which 
 ### Step 2: Extract Representative Kunitz Domain Structures
 Run the following script to collect a set of representative PDB entries annotated with the Kunitz domain:
 
-```bash
 bash script_recover_representative_kunitz.sh
 This generates a file named tmp_pdb_efold_ids.txt containing the PDB codes.
 
@@ -80,52 +79,37 @@ Paste the downloaded content into the file:
 Copia
 Modifica
 pdb_kunitz_rp.ali
-Step 4: Build and Evaluate the Structure-Based HMM
-Run the following scripts:
+### Step 4: Build and Evaluate the Structural HMM Model
 
-bash
-Copia
-Modifica
+Run the following scripts to build the structural HMM and evaluate its performance:
+
+```bash
 bash create_hmm_str.sh
 bash create_testing_sets.sh
-These scripts perform the following operations:
+This step will:
 
-Build a structural HMM from the PDBeFold alignment.
+Build a structural HMM using the multiple alignment from PDBeFold (pdb_kunitz_rp.ali)
 
-Remove training sequences and create two random test sets with positive and negative examples.
+Filter out training sequences from the Swiss-Prot dataset (uniprot_sprot.fasta)
 
-Use 2-fold cross-validation to identify optimal E-value thresholds via Matthews Correlation Coefficient (MCC).
+Generate positive (pos_1.fasta, pos_2.fasta) and negative (neg_1.fasta, neg_2.fasta) test sets
 
-Evaluate the model using:
+Automatically compute optimal E-value thresholds using 2-fold cross-validation (based on Matthews Correlation Coefficient, MCC)
 
-Set 1 evaluated with Set 2’s threshold
+Evaluate model performance across:
 
-Set 2 evaluated with Set 1’s threshold
+Set 1 using Set 2’s threshold
 
-Combined Set 1 + Set 2 with both thresholds
+Set 2 using Set 1’s threshold
 
-Results are written to:
+Combined set using both thresholds
+
+Output evaluation metrics (MCC, precision, recall, FPR, FNR) to:
 
 Copia
 Modifica
 hmm_results_strali.txt
-Metrics reported include:
-
-Matthews Correlation Coefficient (MCC)
-
-Precision
-
-Recall (True Positive Rate)
-
-Lists of false positives and false negatives
-
-css
-Copia
-Modifica
-
-Fammi sapere se vuoi anche una sezione per la **versione opzionale basata su sequenze (MUSCLE)** o per aggiungere link cliccabili a file del repository.
-
-
+False positives and false negatives will also be listed in the output files.
 
 
 
