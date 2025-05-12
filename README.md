@@ -52,53 +52,49 @@ The pipeline depends on the following bioinformatics tools and libraries, which 
 
 ## Workflow
 
-Step 2: Run Representative ID Extraction Script
-Execute the script:
+### Step 1: Run Representative ID Extraction Script
+Execute the following script:
 
-bash
-Copia
-Modifica
-bash script_recover_representative_kunitz.sh
-This will generate tmp_pdb_efold_ids.txt.
+```bash script_recover_representative_kunitz.sh```
+This will generate the file tmp_pdb_efold_ids.txt.
 
 Note: Before submitting to PDBeFold, manually review the sequences to ensure they are of appropriate length and free of unstructured regions. This ensures alignment and HMM quality.
 
-Step 3: Perform Structure-Based Multiple Alignment
+### Step 2: Perform Structure-Based Multiple Alignment
 Go to the PDBeFold Multi Alignment Tool.
 
-Set:
+Set the following options:
 
-Mode: Multiple
+- Mode: Multiple
 
-Source: List of PDB codes
+- Source: List of PDB codes
 
-Upload tmp_pdb_efold_ids.txt and download the FASTA alignment.
+- Upload the tmp_pdb_efold_ids.txt file and download the FASTA alignment.
 
-Paste the downloaded content into pdb_kunitz_rp.ali.
+Paste the downloaded content into the pdb_kunitz_rp.ali file.
 
-Step 4: Build and Test the HMM Model
-Execute the script:
+### Step 3: Build and Test the HMM Model
 
-bash
-Copia
-Modifica
-bash create_hmm_str.sh
-Execute:
+Execute the following script:
 
-bash
-Copia
-Modifica
-bash create_testing_sets.sh
+```bash create_hmm_str.sh```
+
+Then execute:
+
+```bash create_testing_sets.sh```
+
 This pipeline will:
 
-Build the structural HMM from the PDBeFold alignment.
+- Build the structural HMM from the PDBeFold alignment.
 
-Create training and test sets by separating positive (Kunitz) and negative (non-Kunitz) sequences.
+- Create training and test sets by separating positive (Kunitz) and negative (non-Kunitz) sequences.
 
-Perform 2-fold cross-validation to identify the optimal E-value thresholds using MCC.
+- Perform 2-fold cross-validation to identify the optimal E-value thresholds using MCC.
 
-Evaluate the model on Set 1, Set 2, and a combined dataset.
+- Evaluate the model on Set 1, Set 2, and the combined dataset.
 
-Report MCC, precision, recall, false positives, and false negatives.
+- Report MCC, precision, recall, false positives, and false negatives.
 
-Results will be saved in hmm_results_strali.txt.
+The results will be saved in the hmm_results_strali.txt file.
+
+
