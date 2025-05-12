@@ -1,6 +1,6 @@
 # Kunitz Domain HMM Pipeline
 
-## Indice
+## Index
 
 - [Introduction](#introduction)
 - [Recommended Packages](#recommended-packages)
