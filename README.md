@@ -45,6 +45,7 @@ The pipeline depends on the following bioinformatics tools and libraries, which 
 - [`create_testing_sets.sh`](./create_testing_sets.sh) – Script to generate the test sets and compute performance metrics.
 - [`performance.py`](./performance.py) – Python script to compute evaluation metrics (MCC, precision, TPR, etc.) for model predictions.
 - [`getseq.py`](./getseq.py) – Python script to extract specific sequences from a FASTA file based on a list of accession IDs.
+- It is also essential to download all protein sequences available in the Swiss-Prot database, as they will be used to construct the negative dataset.
 
 
 ---
