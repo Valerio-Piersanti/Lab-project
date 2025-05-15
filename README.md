@@ -6,6 +6,7 @@
 - [Recommended Packages](#recommended-packages)
 - [Required Files](#required-files)
 - [Workflow](#workflow)
+- [Author](#Author)
 
 ---
 
@@ -95,5 +96,12 @@ This pipeline will:
 - Report MCC, precision, recall, false positives, and false negatives.
 
 The results will be saved in the [`hmm_results_strali.txt file`](./hmm_results_strali.txt) file.
+
+##Author
+
+Valerio Piersanti
+MSc Bioinformatics - University of Bologna
+Laboratory of Bioinformatics 1 (LB1)
+Fell free to contact me on valerio.piersanti3@unibo.studio.it
 
 
