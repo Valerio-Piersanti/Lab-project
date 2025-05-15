@@ -105,7 +105,7 @@ MSc Bioinformatics - University of Bologna
 
 Laboratory of Bioinformatics 1 (LB1)
 
-The articole `
+The articole `Lab1_project_paper`
 
 Fell free to contact me on valerio.piersanti3@unibo.studio.it 
 
