@@ -100,8 +100,11 @@ The results will be saved in the [`hmm_results_strali.txt file`](./hmm_results_s
 ## Author
 
 Valerio Piersanti
+
 MSc Bioinformatics - University of Bologna
+
 Laboratory of Bioinformatics 1 (LB1)
+
 Fell free to contact me on valerio.piersanti3@unibo.studio.it
 
 
