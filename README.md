@@ -38,7 +38,7 @@ The pipeline depends on the following bioinformatics tools and libraries, which 
 
 ## Required Files
 
-- [`rcsb_pdb_custom_report_20250407015737.csv`](./rcsb_pdb_custom_report_20250407015737.csv) – Custom report downloaded from RCSB PDB, filtered for Kunitz domain structures.
+- [`rcsb_pdb_custom_report_20250407015737.csv`](./rcsb_pdb_custom_report_20250407015737.csv) – Custom report downloaded from RCSB PDB, filtered for Kunitz domain structures (identifier = 'PF00014' AND annotation type = 'Pfam' AND polymer entity sequence length <= 80 AND polymer entity sequence length >= 45). Custom the report with these flags: Entry ID, PDB ID, Entity ID, Auth Asym ID, Sequence, Annotation Identifier, Data collection resolution.
 - [`script_recover_representative_kunitz.sh`](./script_recover_representative_kunitz.sh) – Script to extract representative PDB IDs of Kunitz domain structures.
 - [`create_hmm_str.sh`](./create_hmm_str.sh) – Script to build the structural HMM model from the structural alignment.
 - [`create_testing_sets.sh`](./create_testing_sets.sh) – Script to generate the test sets and compute performance metrics.
