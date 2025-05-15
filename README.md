@@ -69,9 +69,9 @@ Set the following options:
 
 - Source: List of PDB codes
 
-- Upload the [`tmp_pdb_efold_ids.txt file`](./tmp_pdb_efold_ids.txt) file and download the FASTA alignment.
+- Upload the [`tmp_pdb_efold_ids.txt`](./tmp_pdb_efold_ids.txt) file and download the FASTA alignment.
 
-Paste the downloaded content into the [`pdb_kunitz_rp.ali file`](./pdb_kunitz_rp.ali) file.
+Paste the downloaded content into the [`pdb_kunitz_rp.ali`](./pdb_kunitz_rp.ali) file.
 
 ### Step 3: Build and Test the HMM Model
 
@@ -95,7 +95,7 @@ This pipeline will:
 
 - Report MCC, precision, recall, false positives, and false negatives.
 
-The results will be saved in the [`hmm_results_strali.txt file`](./hmm_results_strali.txt) file.
+The results will be saved in the [`hmm_results_strali.txt`](./hmm_results_strali.txt) file.
 
 ## Author
 
@@ -105,7 +105,7 @@ MSc Bioinformatics - University of Bologna
 
 Laboratory of Bioinformatics 1 (LB1)
 
-The articole `Lab1_project_paper`
+The articole [`Lab1_project_paper`](./Lab_project_paper.
 
 Fell free to contact me on valerio.piersanti3@unibo.studio.it 
 
