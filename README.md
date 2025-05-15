@@ -97,7 +97,7 @@ This pipeline will:
 
 The results will be saved in the [`hmm_results_strali.txt file`](./hmm_results_strali.txt) file.
 
-##Author
+## Author
 
 Valerio Piersanti
 MSc Bioinformatics - University of Bologna
